@@ -1,264 +1,374 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borracharia Rápida - Soluções para o seu pneu</title>
-    <style>
-        /* Estilos Gerais */
-        :root {
-            --primary-color: #ffcc00; /* Amarelo chamativo */
-            --dark-bg: #1a1a1a;
-            --text-light: #ffffff;
-            --text-dark: #333333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revista NEXUS Ciência - Página 42</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    :root {
+      --primary-color: #0b132b;
+      --accent-color: #00b4d8;
+      --accent-glow: #90e0ef;
+      --bg-color: #f8f9fa;
+      --text-color: #1d2d44;
+      --muted-text: #4a5568;
+      --border-color: #e2e8f0;
+    }
 
-        body {
-            background-color: #f4f4f4;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Cabeçalho */
-        header {
-            background-color: var(--dark-bg);
-            color: var(--primary-color);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--primary-color);
-        }
+    body {
+      background-color: #111827;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-        header h1 {
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+    /* Container da Página da Revista (Proporção similar a papel A4) */
+    .magazine-page {
+      width: 100%;
+      max-width: 900px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 40px 50px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
 
-        nav {
-            margin-top: 10px;
-        }
+    /* Cabeçalho do Topo da Revista */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 12px;
+      margin-bottom: 25px;
+    }
 
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      color: var(--primary-color);
+    }
 
-        nav a:hover {
-            color: var(--primary-color);
-        }
+    .meta-info {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted-text);
+      font-weight: 600;
+    }
 
-        /* Banner / Hero Section */
-        .hero {
-            background-color: #333;
-            color: var(--text-light);
-            text-align: center;
-            padding: 80px 20px;
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-        }
+    .category-tag {
+      background-color: var(--primary-color);
+      color: var(--accent-color);
+      padding: 4px 10px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 2px;
+    }
 
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
+    /* Títulos do Artigo */
+    .article-header {
+      margin-bottom: 25px;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
+    .main-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.6rem;
+      line-height: 1.1;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+    }
 
-        .btn {
-            background-color: var(--primary-color);
-            color: var(--dark-bg);
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 5px;
-            display: inline-block;
-            transition: transform 0.2s ease, background-color 0.3s ease;
-        }
+    .subtitle {
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      color: var(--muted-text);
+      font-style: italic;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
 
-        .btn:hover {
-            background-color: #e6b800;
-            transform: scale(1.05);
-        }
+    .byline {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      letter-spacing: 1px;
+      border-left: 3px solid var(--accent-color);
+      padding-left: 8px;
+    }
 
-        /* Serviços */
-        .servicos {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #fff;
-        }
+    /* Imagem de Destaque */
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      background: linear-gradient(135deg, #0b132b 0%, #1c2541 50%, #3a506b 100%);
+      border-radius: 6px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .servicos h2 {
-            margin-bottom: 40px;
-            font-size: 2rem;
-        }
+    /* Arte Abstrata representativa em SVG */
+    .hero-illustration {
+      width: 100%;
+      height: 100%;
+    }
 
-        .grid-servicos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(11, 19, 43, 0.85);
+      color: #e0e1dd;
+      font-size: 0.75rem;
+      padding: 8px 15px;
+      backdrop-filter: blur(4px);
+    }
 
-        .card {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 30px 20px;
-            width: 100%;
-            max-width: 300px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
+    /* Layout em Colunas */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
 
-        .card:hover {
-            transform: translateY(-10px);
-            border-bottom: 4px solid var(--primary-color);
-        }
+    .main-text {
+      font-family: 'Lora', serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #2b2d42;
+      text-align: justify;
+    }
 
-        .card h3 {
-            margin-bottom: 15px;
-            color: var(--dark-bg);
-        }
+    /* Capitular (Primeira letra grande) */
+    .drop-cap::first-letter {
+      font-family: 'Cinzel', serif;
+      font-size: 3.5rem;
+      float: left;
+      line-height: 0.8;
+      margin-right: 10px;
+      margin-top: 4px;
+      color: var(--primary-color);
+    }
 
-        /* Contato */
-        .contato {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            padding: 50px 20px;
-            text-align: center;
-        }
+    .main-text p {
+      margin-bottom: 15px;
+    }
 
-        .contato h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
+    /* Sidebar / Infográfico */
+    .sidebar {
+      background-color: #edf2f7;
+      padding: 20px;
+      border-radius: 6px;
+      border-top: 4px solid var(--accent-color);
+    }
 
-        .contato-info {
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
+    .sidebar-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .contato-info p {
-            margin: 10px 0;
-        }
+    .data-card {
+      background: white;
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
 
-        /* Rodapé */
-        footer {
-            background-color: #111;
-            color: #888;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
+    .data-number {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0077b6;
+      font-family: 'Cinzel', serif;
+    }
 
-        /* Botão Flutuante do WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-        }
+    .data-label {
+      font-size: 0.75rem;
+      color: var(--muted-text);
+      text-transform: uppercase;
+    }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-    </style>
+    /* Citação Destaque */
+    .pull-quote {
+      grid-column: 1 / -1;
+      margin: 15px 0;
+      padding: 15px 20px;
+      border-left: 4px solid var(--primary-color);
+      background-color: #e0f2fe;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+    }
+
+    /* Rodapé da Página */
+    .page-footer {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--muted-text);
+    }
+
+    .page-number {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+    }
+
+    /* Responsividade simples */
+    @media (max-width: 768px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .magazine-page {
+        padding: 20px;
+      }
+      .main-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
+  <article class="magazine-page">
+    
     <!-- Cabeçalho -->
-    <header>
-        <h1>Borracharia Rápida</h1>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#contato">Contato</a>
-        </nav>
+    <header class="top-header">
+      <div>
+        <span class="brand-title">NEXUS</span>
+        <span class="meta-info">| Edição 142 • Outubro 2026</span>
+      </div>
+      <span class="category-tag">Astrobiologia</span>
     </header>
 
-    <!-- Banner Principal -->
-    <section id="inicio" class="hero">
-        <h2>Seu pneu furou? Nós resolvemos!</h2>
-        <p>Atendimento rápido, preço justo e profissionais qualificados para colocar seu veículo de volta na estrada.</p>
-        <a href="#contato" class="btn">Solicitar Socorro Agora</a>
+    <!-- Título do Artigo -->
+    <section class="article-header">
+      <h1 class="main-title">Floresta de Cristal em Titã</h1>
+      <p class="subtitle">Sondas em órbita descobrem estruturas vivas de silício que realizam fotos síntese quântica a -180°C.</p>
+      <div class="byline">Por Dra. Valeria Thorne &bull; Fotografias via Sonda Astraea-9</div>
     </section>
 
-    <!-- Seção de Serviços -->
-    <section id="servicos" class="servicos">
-        <h2>Nossos Serviços</h2>
-        <div class="grid-servicos">
-            <div class="card">
-                <h3>🛠️ Conserto de Pneus</h3>
-                <p>Remendos a frio e a quente, vulcanização e reparos rápidos para furos e cortes.</p>
-            </div>
-            <div class="card">
-                <h3>⚙️ Alinhamento e Balanceamento</h3>
-                <p>Evite desgastes irregulares e trepidações no volante com nossos equipamentos de precisão.</p>
-            </div>
-            <div class="card">
-                <h3>🛞 Venda de Pneus</h3>
-                <p>Pneus novos, remolds e meia-vida das melhores marcas com excelentes condições.</p>
-            </div>
-            <div class="card">
-                <h3>🚗 Troca de Óleo e Freios</h3>
-                <p>Manutenção preventiva básica para garantir a segurança e performance do seu motor.</p>
-            </div>
-        </div>
-    </section>
+    <!-- Imagem de Destaque (Ilustração Científica SVG Integrada) -->
+    <div class="hero-visual">
+      <svg class="hero-illustration" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00b4d8" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#0b132b" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        
+        <!-- Fundo Cósmico -->
+        <rect width="800" height="300" fill="#0b132b"/>
+        
+        <!-- Methane Sea -->
+        <path d="M0 220 Q200 200 400 230 T800 210 L800 300 L0 300 Z" fill="#1c2541" opacity="0.8"/>
+        
+        <!-- Crystal Structures (Floresta) -->
+        <polygon points="150,230 170,80 190,230" fill="#90e0ef" opacity="0.7"/>
+        <polygon points="180,240 210,50 230,240" fill="#00b4d8" opacity="0.9"/>
+        <polygon points="220,235 235,120 250,235" fill="#48cae4" opacity="0.6"/>
 
-    <!-- Seção de Contato -->
-    <section id="contato" class="contato">
-        <h2>Fale Conosco</h2>
-        <div class="contato-info">
-            <p><strong>Endereço:</strong> Av. Principal, 123 - Centro, Sua Cidade - UF</p>
-            <p><strong>Telefone/WhatsApp:</strong> (00) 90000-0000</p>
-            <p><strong>Horário de Funcionamento:</strong> Segunda a Sábado: 07h às 19h | Domingos: 08h às 12h</p>
-            <br>
-            <a href="https://wa.me/5500900000000" target="_blank" class="btn">Chamar no WhatsApp</a>
+        <polygon points="500,250 530,40 560,250" fill="#00b4d8" opacity="0.85"/>
+        <polygon points="540,240 570,90 600,240" fill="#90e0ef" opacity="0.75"/>
+        
+        <!-- Quantum Energy Nodes -->
+        <circle cx="210" cy="50" r="25" fill="url(#glow)"/>
+        <circle cx="530" cy="40" r="35" fill="url(#glow)"/>
+        
+        <!-- Glowing Lines (Energy Exchange) -->
+        <path d="M210 50 Q 370 -10 530 40" stroke="#90e0ef" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+      </svg>
+      <div class="image-caption">
+        <strong>Fig 1.1:</strong> Mapeamento térmico mostrando o fluxo energético entre as espirais de <em>Silicofita Titanis</em> na região do Oceano Kraken.
+      </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="content-grid">
+      
+      <!-- Coluna de Texto Principal -->
+      <div class="main-text">
+        <p class="drop-cap">
+          Durante décadas, a busca por vida extraterrestre esteve acorrentada ao dogma da biologia baseada em carbono e água líquida. No entanto, os dados transmitidos ontem pela sonda orbital <em>Astraea-9</em> reescreveram para sempre os manuais de bioquímica fundamental.
+        </p>
+        <p>
+          Nas profundezas gélidas dos mares de metano de Titã, a maior lua de Saturno, os cientistas detectaram redes de estruturas cristalinas que se estendem por quilômetros. Denominadas preliminarmente de <strong>Silicofitas</strong>, estas formações não utilizam luz solar direta para gerar energia.
+        </p>
+        <p>
+          Em vez disso, elas aproveitam o gradiente térmico microbiano através de uma reação inovadora: a <em>Silicofotossíntese Quântica</em>. O processo permite capturar partículas de luz infravermelha extremamente fracas e convertê-las em energia química quase sem perda de calor.
+        </p>
+      </div>
+
+      <!-- Sidebar / Infográfico -->
+      <aside class="sidebar">
+        <h3 class="sidebar-title">
+          <span>🔬</span> Dados da Descoberta
+        </h3>
+
+        <div class="data-card">
+          <div class="data-number">-179,2 °C</div>
+          <div class="data-label">Temperatura de Operação</div>
         </div>
-    </section>
+
+        <div class="data-card">
+          <div class="data-number">99.4%</div>
+          <div class="data-label">Eficiência Quântica</div>
+        </div>
+
+        <div class="data-card">
+          <div class="data-number">Si-O-N</div>
+          <div class="data-label">Matriz Polimérica Base</div>
+        </div>
+      </aside>
+
+      <!-- Quote em destaque estendida -->
+      <blockquote class="pull-quote">
+        "Elas não apenas sobrevivem ao frio extremo de Titã; elas usam a ausência de calor para manter a coerência quântica de suas cadeias moleculares."
+      </blockquote>
+
+    </div>
 
     <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2026 Borracharia Rápida. Todos os direitos reservados.</p>
+    <footer class="page-footer">
+      <span>NEXUS CIÊNCIA &bull; O FUTURO DA DESCOBERTA</span>
+      <span class="page-number">42</span>
     </footer>
 
-    <!-- Botão Flutuante do WhatsApp -->
-    <!-- Substitua o número 5500900000000 pelo número real com código do país (55) + DDD + Número -->
-    <a href="https://wa.me/5500900000000" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
-        💬
-    </a>
+  </article>
 
 </body>
 </html>
