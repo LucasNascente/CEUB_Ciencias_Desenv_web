@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borracharia Rápida - Soluções para o seu pneu</title>
+    <style>
+        /* Estilos Gerais */
+        :root {
+            --primary-color: #ffcc00; /* Amarelo chamativo */
+            --dark-bg: #1a1a1a;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--dark-bg);
+            color: var(--primary-color);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Banner / Hero Section */
+        .hero {
+            background-color: #333;
+            color: var(--text-light);
+            text-align: center;
+            padding: 80px 20px;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e6b800;
+            transform: scale(1.05);
+        }
+
+        /* Serviços */
+        .servicos {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .servicos h2 {
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .grid-servicos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px 20px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+        }
+
+        /* Contato */
+        .contato {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .contato h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .contato-info {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .contato-info p {
+            margin: 10px 0;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #111;
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Botão Flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Borracharia Rápida</h1>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section id="inicio" class="hero">
+        <h2>Seu pneu furou? Nós resolvemos!</h2>
+        <p>Atendimento rápido, preço justo e profissionais qualificados para colocar seu veículo de volta na estrada.</p>
+        <a href="#contato" class="btn">Solicitar Socorro Agora</a>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section id="servicos" class="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="grid-servicos">
+            <div class="card">
+                <h3>🛠️ Conserto de Pneus</h3>
+                <p>Remendos a frio e a quente, vulcanização e reparos rápidos para furos e cortes.</p>
+            </div>
+            <div class="card">
+                <h3>⚙️ Alinhamento e Balanceamento</h3>
+                <p>Evite desgastes irregulares e trepidações no volante com nossos equipamentos de precisão.</p>
+            </div>
+            <div class="card">
+                <h3>🛞 Venda de Pneus</h3>
+                <p>Pneus novos, remolds e meia-vida das melhores marcas com excelentes condições.</p>
+            </div>
+            <div class="card">
+                <h3>🚗 Troca de Óleo e Freios</h3>
+                <p>Manutenção preventiva básica para garantir a segurança e performance do seu motor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" class="contato">
+        <h2>Fale Conosco</h2>
+        <div class="contato-info">
+            <p><strong>Endereço:</strong> Av. Principal, 123 - Centro, Sua Cidade - UF</p>
+            <p><strong>Telefone/WhatsApp:</strong> (00) 90000-0000</p>
+            <p><strong>Horário de Funcionamento:</strong> Segunda a Sábado: 07h às 19h | Domingos: 08h às 12h</p>
+            <br>
+            <a href="https://wa.me/5500900000000" target="_blank" class="btn">Chamar no WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Borracharia Rápida. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <!-- Substitua o número 5500900000000 pelo número real com código do país (55) + DDD + Número -->
+    <a href="https://wa.me/5500900000000" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
